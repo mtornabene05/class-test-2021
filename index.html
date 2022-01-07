@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en-US">
 
 <head>
@@ -47,4 +48,57 @@
     <script src="assets/js/script.js"></script>
 </body>
 
+=======
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Music Dashboard</title>
+</head>
+<body>
+    <!-- Can alternate between right and left column being the primary columns  -->
+    <main class="main-container flex-column">
+        <header class="flex-column j-center a-center">
+            <label for="search-box">Please enter the name of an artist</label>
+            <input type="text" id="search-box">
+            <button id="search-btn">Search</button>
+            <div class="btn-container flex-row a-center j-center"></div>
+            <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="./assets/images/ny.mp4" type="video/mp4"> <!-- can add any video here -->
+            </video>
+        </header>
+        <div class="youtube-section flex-row h-100vh">
+            <div class="left-panel flex-row j-center a-center">
+                
+            </div>
+            <div class="right-panel" id="video-tiles"> 
+                
+            </div>
+        </div>
+        
+        <!-- Here, left panel can be  -->
+        <div class="instagram-section flex-row h-100vh">
+            <div class="left-panel flex-row j-center a-center">
+                
+            </div>
+            <div class="right-panel">
+                
+            </div>
+        </div>
+        <div class="spotify-section flex-row h-100vh">
+            <div class="left-panel flex-row j-center a-center">
+                
+            </div>
+            <div class="right-panel">
+                
+            </div>
+        </div>
+    </main>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+>>>>>>> feature/starter
 </html>
