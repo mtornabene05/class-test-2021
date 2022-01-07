@@ -1,71 +1,72 @@
-var searchBtn = document.querySelector('#search-btn');
-var searchedTerms = [];
-var currentDataContainer = document.querySelector('.current-price-data')
-var historicalPriceData = document.querySelector('.historical-price-data')
+(function ($) {
+    $(function () {
 
-var baseApis = {
-    'youtube': {
-        url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
-        delimiter: '&',
-        key: `AIzaSyCC1H1Vgnsts53jjwoLx2jr_Z6YhhypPjw`,
-        parameters: []
-    },
-    'other-api': {
-        url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
-        delimiter: '&',
-        key: ``,
-        parameters: []
-    }
-}
+        $('.sidenav').sidenav();
+        $('.parallax').parallax();
 
-var checkStorage = function() {
-    window.localStorage.setItem?.('searchs', JSON.stringify(searches))
-}
+    }); // end of document ready
+})(jQuery); // end of jQuery name space
 
-var saveSearches = function(searchTerm) {
-    JSON.parse(window.localStorage?.getItem?.('searches')).push(searchTerm).setItem('searches'); //. experimental
-}
 
-var createBtns = function() {
-    window.localStorage.getItem('searches').forEach(function(search) {
-        var searchBtn = document.createElement('button').setAttribute('class', 'search-btn flex-row a-center j-center');
-        document.querySelector('.btn-container').appendChild(searchBtn)
-    })
-}   
 
-var pullData = function(base, delimiter, [...parameters]) {
-    var apiUrl = base;  
-    parameters.forEach(param => {apiUrl += `${delimiter}${param}`});
-    fetch(apiUrl)
-        .then(response => {if (response.ok) {response.json().then(data => {return data})}}) // also use optional chaining here?
-        .catch(err => {console.error(err)})
-}
 
-baseApis.foreach(base => {
-    var data = pullData(base.url, base.delimiter, [...base.parameters])
-    if (base === 'instagram') {pullInstagramData(data)}
-    if (base === 'youtu') {pullYoutubeData(data)}
-})
 
-// these will depend on apis employed
-var loadSpotifyData = function() {
-    document.querySelector('div').appendChild(element.attribute);
-}
 
-var loadYoutubeData = function() {
-    
-}
 
-//Diana's JS additions//
+// var searchBtn = document.querySelector('#search-btn');
+// var searchedTerms = [];
+// var currentDataContainer = document.querySelector('.current-price-data')
+// var historicalPriceData = document.querySelector('.historical-price-data')
 
-//User inputs search bar, replaces keyword= with input
-//var artistinput = document.querySelector('#search-box');
+// var baseApis = {
+//     'youtube': {
+//         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
+//         delimiter: '&',
+//         key: `AIzaSyCC1H1Vgnsts53jjwoLx2jr_Z6YhhypPjw`,
+//         parameters: []
+//     },
+//     'other-api': {
+//         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
+//         delimiter: '&',
+//         key: ``,
+//         parameters: []
+//     }
+// }
 
-//var keyword = function() {
-//  var url = window.location.toString();
-//  window.location = url.replace(/keyword=/, 'keyword=artistinput');
-//}
+// var checkStorage = function() {
+//     window.localStorage.setItem?.('searchs', JSON.stringify(searches))
+// }
 
-fetch ("https://app.ticketmaster.com/discovery/v2/events.json?keyword=&countryCode=US&apikey=lXXeiiHp4jbagNs2QYj0n1bTm6Tr1Q2M")
-.then(response => response.json())
-.then(data => console.log(data));
+// var saveSearches = function(searchTerm) {
+//     JSON.parse(window.localStorage?.getItem?.('searches')).push(searchTerm).setItem('searches'); //. experimental
+// }
+
+// var createBtns = function() {
+//     window.localStorage.getItem('searches').forEach(function(search) {
+//         var searchBtn = document.createElement('button').setAttribute('class', 'search-btn flex-row a-center j-center');
+//         document.querySelector('.btn-container').appendChild(searchBtn)
+//     })
+// }   
+
+// var pullData = function(base, delimiter, [...parameters]) {
+//     var apiUrl = base;  
+//     parameters.forEach(param => {apiUrl += `${delimiter}${param}`});
+//     fetch(apiUrl)
+//         .then(response => {if (response.ok) {response.json().then(data => {return data})}}) // also use optional chaining here?
+//         .catch(err => {console.error(err)})
+// }
+
+// baseApis.foreach(base => {
+//     var data = pullData(base.url, base.delimiter, [...base.parameters])
+//     if (base === 'crypto') {populateCryptoData(data)}
+//     if (base === 'company') {populateCompanyData(data)}
+// })
+
+// // these will depend on apis employed
+// var loadSpotifyData = function() {
+//     document.querySelector('div').appendChild(element.attribute);
+// }
+
+// var loadYoutubeData = function() {
+
+// }
