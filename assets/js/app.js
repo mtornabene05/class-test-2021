@@ -56,5 +56,16 @@ var loadYoutubeData = function() {
     
 }
 
+//Diana's JS additions//
 
+//User inputs search bar, replaces keyword= with input
+//var artistinput = document.querySelector('#search-box');
 
+//var keyword = function() {
+//  var url = window.location.toString();
+//  window.location = url.replace(/keyword=/, 'keyword=artistinput');
+//}
+
+fetch ("https://app.ticketmaster.com/discovery/v2/events.json?keyword=&countryCode=US&apikey=lXXeiiHp4jbagNs2QYj0n1bTm6Tr1Q2M")
+.then(response => response.json())
+.then(data => console.log(data));
