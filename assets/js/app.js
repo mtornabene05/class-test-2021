@@ -43,8 +43,8 @@ var pullData = function(base, delimiter, [...parameters]) {
 
 baseApis.foreach(base => {
     var data = pullData(base.url, base.delimiter, [...base.parameters])
-    if (base === 'crypto') {populateCryptoData(data)}
-    if (base === 'company') {populateCompanyData(data)}
+    if (base === 'instagram') {pullInstagramData(data)}
+    if (base === 'youtu') {pullYoutubeData(data)}
 })
 
 // these will depend on apis employed
