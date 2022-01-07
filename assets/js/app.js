@@ -2,30 +2,28 @@ var searchBtn = document.querySelector('#search-btn');
 var searchedTerms = [];
 var currentDataContainer = document.querySelector('.current-price-data')
 var historicalPriceData = document.querySelector('.historical-price-data')
+
 var baseApis = {
-    'crypto': {
+    'youtube': {
         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
         delimiter: '&',
+        key: `AIzaSyCC1H1Vgnsts53jjwoLx2jr_Z6YhhypPjw`,
         parameters: []
     },
     'other-api': {
         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
         delimiter: '&',
+        key: ``,
         parameters: []
     }
 }
 
 var checkStorage = function() {
-    if (!window.localStorage.getItem('searches')) {window.localStorage.setItem('searchs', JSON.stringify(searches))}
+    window.localStorage.setItem?.('searchs', JSON.stringify(searches))
 }
 
 var saveSearches = function(searchTerm) {
-    var searchTerms = JSON.parse(window.localStorage.getItem('searches'));
-    if (!searchTerms.contains(searchTerm)) {
-        searchTerms.push(searchTerm);
-        return;
-    }
-    window.localStorage.setItem('searches', JSON.stringify(searchTerms));
+    JSON.parse(window.localStorage?.getItem?.('searches')).push(searchTerm).setItem('searches'); //. experimental
 }
 
 var createBtns = function() {
@@ -33,13 +31,13 @@ var createBtns = function() {
         var searchBtn = document.createElement('button').setAttribute('class', 'search-btn flex-row a-center j-center');
         document.querySelector('.btn-container').appendChild(searchBtn)
     })
-}
+}   
 
 var pullData = function(base, delimiter, [...parameters]) {
-    var apiUrl = base;
+    var apiUrl = base;  
     parameters.forEach(param => {apiUrl += `${delimiter}${param}`});
     fetch(apiUrl)
-        .then(response => {if (response.ok) {response.json().then(data => {return data})}})
+        .then(response => {if (response.ok) {response.json().then(data => {return data})}}) // also use optional chaining here?
         .catch(err => {console.error(err)})
 }
 
@@ -50,12 +48,12 @@ baseApis.foreach(base => {
 })
 
 // these will depend on apis employed
-var loadCryptoData = function() {
-    var 
+var loadSpotifyData = function() {
+    document.querySelector('div').appendChild(element.attribute);
 }
 
-var loadCompanyData = function() {
-
+var loadYoutubeData = function() {
+    
 }
 
 
