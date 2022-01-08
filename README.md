@@ -29,7 +29,7 @@ No installation required. Follow the link listed under Usage below or in the Des
 ## Credits
 
 * [Shields.io Link](https://shields.io/): Used to create My Shield found in Badges below.
-* [License Link](https://choosealicense.com/licenses/mit/): Used to determine and copy the correct license for the project found in License below and the COPYING.txt file.
+* [License Link](https://choosealicense.com/licenses/mit/): Used to determine and copy the correct license for the project found in License below and the LICENSE.txt file.
 * [Contributor Covenant Link](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md): Used to obtain a proper code of conduct for contribution found in Contributing below.
 * [Markdown Guide](https://www.markdownguide.org/basic-syntax/): Used to setup the format of the README.md.
 * [Ticketmaster API](https://developer.ticketmaster.com/): Used to display nearby events related to the artist looked up.
