@@ -1,7 +1,5 @@
 var searchBtn = document.querySelector('#search-btn');
 var searchedTerms = [];
-var currentDataContainer = document.querySelector('.current-price-data')
-var historicalPriceData = document.querySelector('.historical-price-data')
 
 var baseApis = {
     'youtube': {
