@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+var searchBtn = document.querySelector('#search-btn');
+var searchedTerms = [];
+=======
 (function ($) {
     $(function () {
+>>>>>>> 51100dc027e35b7e9b4233586d6f67c533c8611e
 
         $('.sidenav').sidenav();
         $('.parallax').parallax();
