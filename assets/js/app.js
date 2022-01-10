@@ -7,11 +7,45 @@
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
+//User inputs search bar, replaces keyword= with input
+var searchBtn = document.querySelector('#search-btn');
 
+    var artistcall = function () {
+        var artistinputEl = document.querySelector('#search-box');
+        var artistinput = artistinputEl.value;
+        
+        fetch (`https://app.ticketmaster.com/discovery/v2/attractions.json?keyword=${artistinput}&apikey=lXXeiiHp4jbagNs2QYj0n1bTm6Tr1Q2M`)
+        .then(response => response.json())
+        
+        .then(function (data) { 
+            console.log(data)
+        
+        for (var i = 0; i < 3; i ++){
+            var tmEl = document.createElement("div");
+            var tmAEl = document.createElement("a");
+            var tmh5El = document.createElement("h4");
+            var tmImgEl = document.createElement("img");
+            tmImgEl.setAttribute("class", "AttractionImg");
+            tmAEl.setAttribute("href", data._embedded.attractions[i].url);
+            tmAEl.setAttribute("target", "_blank");
+            tmImgEl.setAttribute("src", data._embedded.attractions[i].images[0].url);
+            tmh5El.textContent = data._embedded.attractions[i].name;
+            ticketmaster.append(tmAEl);
+            tmAEl.append(tmEl);
+            tmEl.append(tmh5El);
+            tmEl.append(tmImgEl);
+        }
+    })
+// .catch (add a catch for when an artist name isn't recognized)
+    }
 
-
-
-
+searchBtn.addEventListener("click", artistcall);
+$("#search-box").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#search-btn").click();
+    }
+});
+var ticketmaster = document.querySelector('#ticketmaster');
 
 // var searchBtn = document.querySelector('#search-btn');
 // var searchedTerms = [];
