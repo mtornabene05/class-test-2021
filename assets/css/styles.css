@@ -56,20 +56,8 @@
    margin: 0;
  }
 
-<<<<<<< HEAD
- * {
-   z-index: 0;
- }
-
- .white {
-   position: fixed;
-   z-index: 1;
- }
-
-=======
  /*Ticketmaster CSS*/
  .AttractionImg {
    max-width: 200px;
    max-height: 200px;
  }
->>>>>>> feature/htmlchanges
