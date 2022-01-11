@@ -24,8 +24,6 @@ Music dashboard will also populate Events section with three of the artist's upc
 
 ![](./assets/images/screen5.png)
 
-All tasks are saved to local storage for longevity.
-
 ## Deployed Application
 
 the deployed application can be found by following the link below.
