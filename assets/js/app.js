@@ -9,10 +9,14 @@
 
 //User inputs search bar, replaces keyword= with input
 var searchBtn = document.querySelector('#search-btn');
+var getUserInput = function() {return document.querySelector('#search-box').value}
 
     var artistcall = function () {
         var artistinputEl = document.querySelector('#search-box');
         var artistinput = artistinputEl.value;
+        var searchTerm = getUserInput();
+        var url = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=8cd14927b4cb4879b174cabe1c24f270`
+        document.querySelector('.icon-block').innerHTML = ''
         
         fetch (`https://app.ticketmaster.com/discovery/v2/attractions.json?keyword=${artistinput}&apikey=lXXeiiHp4jbagNs2QYj0n1bTm6Tr1Q2M`)
         .then(response => response.json())
@@ -20,26 +24,42 @@ var searchBtn = document.querySelector('#search-btn');
         .then(function (data) { 
             console.log(data)
         
-        for (var i = 0; i < 3; i ++){
-            var tmEl = document.createElement("div");
-            var tmAEl = document.createElement("a");
-            var tmh5El = document.createElement("h4");
-            var tmImgEl = document.createElement("img");
-            tmImgEl.setAttribute("class", "AttractionImg");
-            tmAEl.setAttribute("href", data._embedded.attractions[i].url);
-            tmAEl.setAttribute("target", "_blank");
-            tmImgEl.setAttribute("src", data._embedded.attractions[i].images[0].url);
-            tmh5El.textContent = data._embedded.attractions[i].name;
-            ticketmaster.append(tmAEl);
-            tmAEl.append(tmEl);
-            tmEl.append(tmh5El);
-            tmEl.append(tmImgEl);
+            for (var i = 0; i < 3; i ++){
+                var tmEl = document.createElement("div");
+                var tmAEl = document.createElement("a");
+                var tmh5El = document.createElement("h4");
+                var tmImgEl = document.createElement("img");
+                tmImgEl.setAttribute("class", "AttractionImg");
+                tmAEl.setAttribute("href", data._embedded.attractions[i].url);
+                tmAEl.setAttribute("target", "_blank");
+                tmImgEl.setAttribute("src", data._embedded.attractions[i].images[0].url);
+                tmh5El.textContent = data._embedded.attractions[i].name;
+                ticketmaster.append(tmAEl);
+                tmAEl.append(tmEl);
+                tmEl.append(tmh5El);
+                tmEl.append(tmImgEl);
         }
+
+        fetch(url).then(response => {if (response.ok){response.json().then(data => {
+            console.log(data);
+            for (var i = 0; i < 5; i++) {
+                var html = `
+                <div class='grid-item}'>
+                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                    <h5>${data.articles[i].title}</h5>
+                    <p class='author'>by ${data.articles[i].author}</p>
+                    <p class='content'>${data.articles[i].description}</p>
+                    <a href='${data.articles[i].url}' target='_blank'>Source</a>
+                </div> `
+                document.querySelector('.icon-block').innerHTML += html
+            }
+        })}})
     })
 // .catch (add a catch for when an artist name isn't recognized)
-    }
+}
 
 searchBtn.addEventListener("click", artistcall);
+
 $("#search-box").keyup(function(event) {
     if (event.keyCode === 13) {
         $("#search-btn").click();
@@ -47,60 +67,3 @@ $("#search-box").keyup(function(event) {
 });
 var ticketmaster = document.querySelector('#ticketmaster');
 
-// var searchBtn = document.querySelector('#search-btn');
-// var searchedTerms = [];
-// var currentDataContainer = document.querySelector('.current-price-data')
-// var historicalPriceData = document.querySelector('.historical-price-data')
-
-// var baseApis = {
-//     'youtube': {
-//         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
-//         delimiter: '&',
-//         key: `AIzaSyCC1H1Vgnsts53jjwoLx2jr_Z6YhhypPjw`,
-//         parameters: []
-//     },
-//     'other-api': {
-//         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
-//         delimiter: '&',
-//         key: ``,
-//         parameters: []
-//     }
-// }
-
-// var checkStorage = function() {
-//     window.localStorage.setItem?.('searchs', JSON.stringify(searches))
-// }
-
-// var saveSearches = function(searchTerm) {
-//     JSON.parse(window.localStorage?.getItem?.('searches')).push(searchTerm).setItem('searches'); //. experimental
-// }
-
-// var createBtns = function() {
-//     window.localStorage.getItem('searches').forEach(function(search) {
-//         var searchBtn = document.createElement('button').setAttribute('class', 'search-btn flex-row a-center j-center');
-//         document.querySelector('.btn-container').appendChild(searchBtn)
-//     })
-// }   
-
-// var pullData = function(base, delimiter, [...parameters]) {
-//     var apiUrl = base;  
-//     parameters.forEach(param => {apiUrl += `${delimiter}${param}`});
-//     fetch(apiUrl)
-//         .then(response => {if (response.ok) {response.json().then(data => {return data})}}) // also use optional chaining here?
-//         .catch(err => {console.error(err)})
-// }
-
-// baseApis.foreach(base => {
-//     var data = pullData(base.url, base.delimiter, [...base.parameters])
-//     if (base === 'crypto') {populateCryptoData(data)}
-//     if (base === 'company') {populateCompanyData(data)}
-// })
-
-// // these will depend on apis employed
-// var loadSpotifyData = function() {
-//     document.querySelector('div').appendChild(element.attribute);
-// }
-
-// var loadYoutubeData = function() {
-
-// }

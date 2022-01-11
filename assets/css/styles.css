@@ -46,8 +46,15 @@
  }
  
  .icon-block {
+   display: grid;
+   min-height: 400px;
+   grid-template-columns: repeat(5, 300px);
+   gap: 10px;
+   align-items: center;
    padding: 0 15px;
  }
+
+
  .icon-block .material-icons {
    font-size: inherit;
  }
@@ -56,20 +63,15 @@
    margin: 0;
  }
 
-<<<<<<< HEAD
- * {
-   z-index: 0;
- }
-
- .white {
-   position: fixed;
-   z-index: 1;
- }
-
-=======
  /*Ticketmaster CSS*/
  .AttractionImg {
    max-width: 200px;
    max-height: 200px;
  }
->>>>>>> feature/htmlchanges
+
+
+ #ticketmaster {
+   display: grid;
+   gap: 10px;
+   grid-template-columns: repeat(3, 1fr);
+ }
