@@ -46,15 +46,15 @@
  }
  
  .icon-block {
-   display: grid;
-   min-height: 400px;
-   grid-template-columns: repeat(5, 300px);
-   gap: 10px;
-   align-items: center;
-   padding: 0 15px;
+  display: grid;
+  min-height: 400px;
+  grid-template-columns: repeat(5, 300px);
+  gap: 10px;
+  align-items: center;
+  padding: 0 15px;
  }
 
-
+ 
  .icon-block .material-icons {
    font-size: inherit;
  }
@@ -68,13 +68,9 @@
    max-width: 200px;
    max-height: 200px;
  }
-<<<<<<< HEAD
-=======
-
 
  #ticketmaster {
    display: grid;
    gap: 10px;
    grid-template-columns: repeat(3, 1fr);
  }
->>>>>>> feature/integration
