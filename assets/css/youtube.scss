@@ -57,7 +57,8 @@ header {
 .grid-container {  
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(5, 1fr); // grid-only unit. fr stands for fraction
+    grid-template-columns: repeat(5, 1fr); 
+    // grid-only unit. fr stands for fraction
     // when the fifth column is occupied, the idea of implicit grid comes in; a new row will be made automatically
     // So, when you can, try not to declare grid-template-rows
     // All items will match the height of the tallest item
@@ -66,6 +67,7 @@ header {
         border: 1px solid black;
         padding: 10px;
         transition: 250ms;
+        border-radius: 10%;
 
         .author {
             font-style: italic
