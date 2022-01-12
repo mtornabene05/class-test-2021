@@ -7,80 +7,81 @@
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
+//User inputs search bar, replaces keyword= with input
+var searchBtn = document.querySelector('#search-btn');
+var getUserInput = function () {
+    return document.querySelector('#search-box').value
+}
 
- // Load the IFrame Player API code asynchronously.
- var tag = document.createElement('script');
- tag.src = "https://www.youtube.com/player_api";
- var firstScriptTag = document.getElementsByTagName('script')[0];
- firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var artistcall = function () {
+    document.querySelectorAll('.hide-banner').forEach(banner => {banner.classList.remove('hide-banner')});
+    var artistinputEl = document.querySelector('#search-box');
+    var artistinput = artistinputEl.value;
+    var searchTerm = getUserInput();
+    var url = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=8cd14927b4cb4879b174cabe1c24f270`
+    document.querySelector('.icon-block').innerHTML = '';
+    document.querySelector('#ticketmaster').innerHTML = '';
 
- // Replace the 'ytplayer' element with an <iframe> and
- // YouTube player after the API code downloads.
- var player;
- function onYouTubePlayerAPIReady() {
-     player = new YT.Player('ytplayer', {
-     height: '360',
-     width: '640',
-     videoId: '${data.items[0].id.videoId}'
-     });
+    fetch(url).then(response => {
+        if (!response.ok){
+            window.alert("no data found");
+            return;
+        }  
+        response.json().then(data => {
+            console.log(data);
+            var iconBlock = document.querySelector('.icon-block');
+            if (!data) {
+                iconBlock.textContent = 'No results found';
+                return;
+            }    
+            for (var i = 0; i < 5; i++) {
+                var html = `
+                <div class='grid-item}'>
+                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                    <h5>${data.articles[i].title}</h5>
+                    <p class='author'>by ${data.articles[i].author}</p>
+                    <p class='content'>${data.articles[i].description}</p>
+                    <a href='${data.articles[i].url}' target='_blank'>Source</a>
+                </div> `
+                iconBlock.innerHTML += html;
+            }
+        
+        })
+        
+    })
 
+    fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?keyword=${artistinput}&apikey=lXXeiiHp4jbagNs2QYj0n1bTm6Tr1Q2M`)
+        .then(response => response.json())
 
+        .then(function (data) {
+            console.log(data)
+            if (data.page.totalElements === 0) {
+                ticketmaster.textContent = 'No results found';
+                return;
+            }
+            for (var i = 0; i < 3; i++) {
+                var tmEl = document.createElement("div");
+                var tmAEl = document.createElement("a");
+                var tmh5El = document.createElement("h4");
+                var tmImgEl = document.createElement("img");
+                tmImgEl.setAttribute("class", "AttractionImg");
+                tmAEl.setAttribute("href", data._embedded.attractions[i].url);
+                tmAEl.setAttribute("target", "_blank");
+                tmImgEl.setAttribute("src", data._embedded.attractions[i].images[0].url);
+                tmh5El.textContent = data._embedded.attractions[i].name;
+                ticketmaster.append(tmAEl);
+                tmAEl.append(tmEl);
+                tmEl.append(tmh5El);
+                tmEl.append(tmImgEl);
+            }
+        })
+}
 
+searchBtn.addEventListener("click", artistcall);
 
-// var searchBtn = document.querySelector('#search-btn');
-// var searchedTerms = [];
-// var currentDataContainer = document.querySelector('.current-price-data')
-// var historicalPriceData = document.querySelector('.historical-price-data')
-
-// var baseApis = {
-//     'youtube': {
-//         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
-//         delimiter: '&',
-//         key: `AIzaSyCC1H1Vgnsts53jjwoLx2jr_Z6YhhypPjw`,
-//         parameters: []
-//     },
-//     'other-api': {
-//         url: "https://investing-cryptocurrency-markets.p.rapidapi.com/get-meta-data?locale_info=en_US&lang_ID=1&time_utc_offset=28800",
-//         delimiter: '&',
-//         key: ``,
-//         parameters: []
-//     }
-// }
-
-// var checkStorage = function() {
-//     window.localStorage.setItem?.('searchs', JSON.stringify(searches))
-// }
-
-// var saveSearches = function(searchTerm) {
-//     JSON.parse(window.localStorage?.getItem?.('searches')).push(searchTerm).setItem('searches'); //. experimental
-// }
-
-// var createBtns = function() {
-//     window.localStorage.getItem('searches').forEach(function(search) {
-//         var searchBtn = document.createElement('button').setAttribute('class', 'search-btn flex-row a-center j-center');
-//         document.querySelector('.btn-container').appendChild(searchBtn)
-//     })
-// }   
-
-// var pullData = function(base, delimiter, [...parameters]) {
-//     var apiUrl = base;  
-//     parameters.forEach(param => {apiUrl += `${delimiter}${param}`});
-//     fetch(apiUrl)
-//         .then(response => {if (response.ok) {response.json().then(data => {return data})}}) // also use optional chaining here?
-//         .catch(err => {console.error(err)})
-// }
-
-// baseApis.foreach(base => {
-//     var data = pullData(base.url, base.delimiter, [...base.parameters])
-//     if (base === 'crypto') {populateCryptoData(data)}
-//     if (base === 'company') {populateCompanyData(data)}
-// })
-
-// // these will depend on apis employed
-// var loadSpotifyData = function() {
-//     document.querySelector('div').appendChild(element.attribute);
-// }
-
-// var loadYoutubeData = function() {
-
- }
+$("#search-box").keyup(function (event) {
+    if (event.keyCode === 13) {
+        $("#search-btn").click();
+    }
+});
+var ticketmaster = document.querySelector('#ticketmaster');

@@ -24,11 +24,14 @@
    line-height: 0;
    height: auto;
    color: rgba(255,255,255,.9);
+   background-image: url("../images/background1.jpg");
+   background-attachment: fixed;
  }
-   .parallax-container .section {
+   
+ .parallax-container .section {
      width: 100%;
    }
- 
+
  @media only screen and (max-width : 992px) {
    .parallax-container .section {
      position: absolute;
@@ -46,8 +49,15 @@
  }
  
  .icon-block {
-   padding: 0 15px;
+  display: grid;
+  min-height: 400px;
+  grid-template-columns: repeat(5, 300px);
+  gap: 10px;
+  align-items: center;
+  padding: 0 15px;
  }
+
+ 
  .icon-block .material-icons {
    font-size: inherit;
  }
@@ -55,3 +65,24 @@
  footer.page-footer {
    margin: 0;
  }
+
+ /*Ticketmaster CSS*/
+ .AttractionImg {
+   max-width: 200px;
+   max-height: 200px;
+ }
+
+ #ticketmaster {
+   display: grid;
+   gap: 10px;
+   grid-template-columns: repeat(3, 1fr);
+   color: black;
+ }
+
+ .hide-banner {
+   display: none;
+ }
+
+ 
+
+ 
