@@ -28,7 +28,6 @@ Music dashboard will also populate Events section with three of the artist's upc
 
 the deployed application can be found by following the link below.
 
-
 ## Feedback
 
 Leave comments/suggestions in the Slack channel!

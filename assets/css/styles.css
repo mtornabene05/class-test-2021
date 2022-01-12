@@ -24,6 +24,8 @@
    line-height: 0;
    height: auto;
    color: rgba(255,255,255,.9);
+   background-image: url("../images/background1.jpg");
+   background-attachment: fixed;
  }
    .parallax-container .section {
      width: 100%;
@@ -73,4 +75,13 @@
    display: grid;
    gap: 10px;
    grid-template-columns: repeat(3, 1fr);
+   color: black;
  }
+
+ .hide-banner {
+   display: none;
+ }
+
+ 
+
+ 
