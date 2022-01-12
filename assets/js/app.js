@@ -14,15 +14,41 @@ var getUserInput = function () {
 }
 
 var artistcall = function () {
-    document.querySelectorAll('.hide-banner').forEach(banner => {
-        banner.classList.remove('hide-banner')
-    });
+    document.querySelectorAll('.hide-banner').forEach(banner => {banner.classList.remove('hide-banner')});
     var artistinputEl = document.querySelector('#search-box');
     var artistinput = artistinputEl.value;
     var searchTerm = getUserInput();
     var url = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=8cd14927b4cb4879b174cabe1c24f270`
     document.querySelector('.icon-block').innerHTML = '';
     document.querySelector('#ticketmaster').innerHTML = '';
+
+    fetch(url).then(response => {
+        if (!response.ok){
+            window.alert("no data found");
+            return;
+        }  
+        response.json().then(data => {
+            console.log(data);
+            var iconBlock = document.querySelector('.icon-block');
+            if (!data) {
+                iconBlock.textContent = 'No results found';
+                return;
+            }    
+            for (var i = 0; i < 5; i++) {
+                var html = `
+                <div class='grid-item}'>
+                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                    <h5>${data.articles[i].title}</h5>
+                    <p class='author'>by ${data.articles[i].author}</p>
+                    <p class='content'>${data.articles[i].description}</p>
+                    <a href='${data.articles[i].url}' target='_blank'>Source</a>
+                </div> `
+                iconBlock.innerHTML += html;
+            }
+        
+        })
+        
+    })
 
     fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?keyword=${artistinput}&apikey=lXXeiiHp4jbagNs2QYj0n1bTm6Tr1Q2M`)
         .then(response => response.json())
@@ -31,47 +57,22 @@ var artistcall = function () {
             console.log(data)
             if (data.page.totalElements === 0) {
                 ticketmaster.textContent = 'No results found';
-            } else {
-                for (var i = 0; i < 3; i++) {
-                    var tmEl = document.createElement("div");
-                    var tmAEl = document.createElement("a");
-                    var tmh5El = document.createElement("h4");
-                    var tmImgEl = document.createElement("img");
-                    tmImgEl.setAttribute("class", "AttractionImg");
-                    tmAEl.setAttribute("href", data._embedded.attractions[i].url);
-                    tmAEl.setAttribute("target", "_blank");
-                    tmImgEl.setAttribute("src", data._embedded.attractions[i].images[0].url);
-                    tmh5El.textContent = data._embedded.attractions[i].name;
-                    ticketmaster.append(tmAEl);
-                    tmAEl.append(tmEl);
-                    tmEl.append(tmh5El);
-                    tmEl.append(tmImgEl);
-                }
+                return;
             }
-
-        })
-
-        fetch(url).then(response => {
-            if (response.ok) {
-                response.json().then(data => {
-                    console.log(data);
-                    var iconBlock = document.querySelector('.icon-block')
-                    if (!data) {
-                        iconBlock.textContent = 'No results found';
-                    } else {       
-                        for (var i = 0; i < 5; i++) {
-                            var html = `
-                            <div class='grid-item}'>
-                                <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                                <h5>${data.articles[i].title}</h5>
-                                <p class='author'>by ${data.articles[i].author}</p>
-                                <p class='content'>${data.articles[i].description}</p>
-                                <a href='${data.articles[i].url}' target='_blank'>Source</a>
-                            </div> `
-                            iconBlock.innerHTML += html;
-                        }
-                    }
-                })
+            for (var i = 0; i < 3; i++) {
+                var tmEl = document.createElement("div");
+                var tmAEl = document.createElement("a");
+                var tmh5El = document.createElement("h4");
+                var tmImgEl = document.createElement("img");
+                tmImgEl.setAttribute("class", "AttractionImg");
+                tmAEl.setAttribute("href", data._embedded.attractions[i].url);
+                tmAEl.setAttribute("target", "_blank");
+                tmImgEl.setAttribute("src", data._embedded.attractions[i].images[0].url);
+                tmh5El.textContent = data._embedded.attractions[i].name;
+                ticketmaster.append(tmAEl);
+                tmAEl.append(tmEl);
+                tmEl.append(tmh5El);
+                tmEl.append(tmImgEl);
             }
         })
 }
