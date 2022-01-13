@@ -34,10 +34,10 @@ var artistcall = function () {
                 iconBlock.textContent = 'No results found';
                 return;
             }    
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 3; i++) {
                 var html = `
-                <div class='grid-item}'>
-                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                <div class='news-item'>
+                    <h2 class="center cyan-text text-lighten-1"><i class="material-icons">rss_feed</i></h2>
                     <h5>${data.articles[i].title}</h5>
                     <p class='author'>by ${data.articles[i].author}</p>
                     <p class='content'>${data.articles[i].description}</p>
