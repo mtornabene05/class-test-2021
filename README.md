@@ -27,15 +27,15 @@ No installation required. Follow the link listed under Usage below or in the Des
 
 To use Music Dashboard, simply type in the name of the artists in the search bar, shown in the following screenshot: 
 
-* [Music Dashboard Search Bar](./assets/images/screenshot2.png)
+<img src="./assets/images/screenshot2.png" alt="screenshot2" width="400"/>
 
 By clicking the search button or hitting enter, the news section will be populated with five of the most salient articles about the artist. The dashboard will only display the headline and a short summary of the article, but the user can click the "source" link to be taken to the source page of the full article.
 
-* [Music Dashboard News](./assets/images/screenshot3.png)
+<img src="./assets/images/screenshot3.png" alt="screenshot3" width="400"/>
 
 Music dashboard will also populate Events section with three of the artist's upcoming events.
 
-* [Music Dashboard Events](./assets/images/screenshot4.png)
+<img src="./assets/images/screenshot4.png" alt="screenshot4" width="400"/>
 
 ## Credits
 
