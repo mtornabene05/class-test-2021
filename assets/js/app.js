@@ -24,7 +24,8 @@ var artistcall = function () {
 
     fetch(url).then(response => {
         if (!response.ok){
-            window.alert("no data found");
+            var iconBlock = document.querySelector('.icon-block');
+            iconBlock.textContent = 'No results found';
             return;
         }  
         response.json().then(data => {
