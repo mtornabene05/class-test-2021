@@ -46,10 +46,10 @@ Music dashboard will also populate Events section with three of the artist's upc
 * [Ticketmaster API](https://developer.ticketmaster.com/): Used to display nearby attractions related to the artist looked up.
 * [NewsAPI](newsapi.org): Used to display recent news regarding the artist looked up.
 * [Materialize CSS](https://materializecss.com/): Used to design the layout of the page and colors.
-* [Dariga](https://github.com/dariga17/): 
+* [Dariga](https://github.com/dariga17/): Helped with materialize CSS, JS, and overview of README.md. Made the powerpoint.
 * [Diana](https://github.com/2332fun/): Made the README.md, worked on ticketmaster API, tidied html.
-* [Maria](https://github.com/mtornabene05/): Lead the project, chose the goal of the project, did the materialize.CSS
-* [Ryan](https://github.com/rryan-kray/): Made the javascript code for the youtube API implementation.
+* [Maria](https://github.com/mtornabene05/): Lead the project, chose the goal of the project, aided Ryan's attempt in integrating Youtube API, did the foundation of materialize.CSS
+* [Ryan](https://github.com/rryan-kray/): Attempted Youtube JS, ran into copyright issues; Made the javascript code for the NewsAPI implementation. Aided in powerpoint.
 
 ## License
 
