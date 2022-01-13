@@ -1,53 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>Music Dashboard</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Music Dashboard</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./assets/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
+
 <body>
-    <!-- Can alternate between right and left column being the primary columns  -->
-    <main class="main-container flex-column">
-        <header class="flex-column j-center a-center">
-            <label for="search-box">Please enter the name of an artist</label>
-            <input type="text" id="search-box">
-            <button id="search-btn">Search</button>
-            <div class="btn-container flex-row a-center j-center"></div>
-            <div class="overlay"></div>
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="./assets/images/ny.mp4" type="video/mp4"> <!-- can add any video here -->
-            </video>
-        </header>
-        <div class="youtube-section flex-row h-100vh">
-            <div class="left-panel flex-row j-center a-center">
-                
-            </div>
-            <div class="right-panel" id="video-tiles"> 
-                
-            </div>
+  <div id="index-banner" class="parallax-container">
+    <div class="parallax"><img src="./assets/images/background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="section no-pad-bot">
+      <div class="banner ">
+        <br><br>
+        <h2 class="header left-align cyan-text text-lighten-1">Find events and news on <br> your favorite artists!</h2>
+        <div class="srch-btn">
+            <input class="cyan-text text-lighten-1" placeholder="What artist are you looking for?" type="text" id="search-box">
+            <br>
+            <button class="waves-affect waves-light btn cyan-text text-lighten-1" id="search-btn">Search</button>
         </div>
-        
-        <!-- Here, left panel can be  -->
-        <div class="instagram-section flex-row h-100vh">
-            <div class="left-panel flex-row j-center a-center">
-                
-            </div>
-            <div class="right-panel">
-                
-            </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+<<<<<<< HEAD
+  <div class="content">
+    <div class="container hide-banner">
+      <div class="section">
+=======
+
+  <div class="container hide-banner">
+    <div class="section">
+      <!--   Icon Section   -->
+      <div class="row">
+>>>>>>> fcdc2f8030d892f39500a29614c86a258faae33a
+        <div class="col s12 m4">
+          <h2 class="cyan-text text-lighten-1">Check out the headlines!</h2>
+          <div class="icon-block"></div>
         </div>
-        <div class="spotify-section flex-row h-100vh">
-            <div class="left-panel flex-row j-center a-center">
-                
-            </div>
-            <div class="right-panel">
-                
-            </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
         </div>
-    </main>
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src="./assets/js/app.js"></script>
+      </div>
+    </div>
+    <div class="parallax"><img src="./assets/images/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <div class="content">
+    <div class="container hide-banner">
+      <div class="section">
+        <div class="col s12 center">
+            <h2 class="cyan-text text-lighten-1">Find an upcoming event!</h2>
+            <div id="ticketmaster"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="cyan-text text-lighten-1">Diana Taylor, Dariga Iskakiva, Maria Tornabene, Ryan Kray</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./assets/js/materialize.js"></script>
+  <!-- <script src="https://www.youtube.com/player_api"></script> -->
+  <script src="./assets/js/app.js"></script>
+
 </body>
 </html>
