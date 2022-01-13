@@ -25,7 +25,7 @@ No installation required. Follow the link listed under Usage below or in the Des
 
 * [Link to Webpage](https://mtornabene05.github.io/music-dashboard/)
 
-To use Music Dashboard, simply type in the name of the artists in the search bar, shown in the following screenshot: 
+To use Music Dashboard, you must have a Developer Subscription to view the NewsAPI via live server. But to use the NewsApi outside of developing, you need a Business or Advanced subscription through newsapi.org. For users, simply type in the name of the artists in the search bar, shown in the following screenshot:
 
 ![Music Dashboard Search Bar](./assets/images/screenshot2.PNG "Screenshot2")
 
