@@ -81,6 +81,8 @@ SOFTWARE.
 
 [![Maria's Sheild](https://img.shields.io/badge/mtornabene05-mtornabene05%20contributed%20to%20this%20project-ff69b4?fbclid=IwAR1fgv_7_-bzwAwIL_F0StlfEkT9IhvNPipk8QA-secF_BOJtbeCQ5p_2_E)](https://github.com/mtornabene05)
 
+[![Dariga's Shield](https://img.shields.io/badge/dariga17-dariga17%20contributed%20to%20this%20project-success)](https://github.com/dariga17)
+
 ## Features
 
 The website has a searchbar that allows the user to type in their own input for the artist's name, followed by a choice of clicking Search or hitting Enter on their keyboard to see results. The website hides the Ticketmaster and NewsApi sections until the user inputs an artists' name for the first time to streamline the appearance of the webpage. The website uses 2 APIs; Ticketmaster for finding attractions, and NewsApi for finding news about the artist. The website will display a "no results found" if no data regarding the entered artist is found.
