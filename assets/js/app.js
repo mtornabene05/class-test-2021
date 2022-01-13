@@ -7,12 +7,12 @@
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-//User inputs search bar, replaces keyword= with input
 var searchBtn = document.querySelector('#search-btn');
 var getUserInput = function () {
     return document.querySelector('#search-box').value
 }
 
+//when user submits via click or enter key => artist call function searches and displays a response
 var artistcall = function () {
     document.querySelectorAll('.hide-banner').forEach(banner => {banner.classList.remove('hide-banner')});
     var artistinputEl = document.querySelector('#search-box');
@@ -22,6 +22,7 @@ var artistcall = function () {
     document.querySelector('.icon-block').innerHTML = '';
     document.querySelector('#ticketmaster').innerHTML = '';
 
+    //checks for data in the news api
     fetch(url).then(response => {
         if (!response.ok){
             var iconBlock = document.querySelector('.icon-block');
@@ -51,6 +52,7 @@ var artistcall = function () {
         
     })
 
+    //checks for data in ticketmaster api
     fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?keyword=${artistinput}&apikey=lXXeiiHp4jbagNs2QYj0n1bTm6Tr1Q2M`)
         .then(response => response.json())
 
