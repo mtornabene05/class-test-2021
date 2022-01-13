@@ -4,7 +4,7 @@
 
 What: Our motivation for this project was to provide a dashboard where a user could look up their favorite artist and see that artists' latest social media and upcoming events. Our efforts have allowed the user to type in their favorite artist's name and see results from youtube, spotify, twitter, and instagram, along with events shown through the ticketmaster API. We learned how to use APIs, Fetch in javascript, and use Materialize for the CSS. Our project should stand out as efficient in displaying the wanted information.
 
-* [Link to Webpage](https://mtornabene05.github.io/music-dashboard/)
+<img src="./assets/images/screenshot.png" alt="screenshot1" width="400"/>
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ What: Our motivation for this project was to provide a dashboard where a user co
 
 ## Installation
 
-No installation required. Follow the link listed under Usage below or in the Description above.
+No installation required. Follow the link listed under Usage below.
 
 ## Usage
 
