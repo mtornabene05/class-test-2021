@@ -77,7 +77,9 @@ SOFTWARE.
 
 ## Badges
 
-[![My Shield](https://img.shields.io/badge/2332fun-2332fun%20contributed%20to%20this%20project.-blueviolet)](https://github.com/2332fun)
+[![Diana's Shield](https://img.shields.io/badge/2332fun-2332fun%20contributed%20to%20this%20project.-blueviolet)](https://github.com/2332fun)
+
+[![Maria's Sheild](https://img.shields.io/badge/mtornabene05-mtornabene05%20contributed%20to%20this%20project-ff69b4?fbclid=IwAR1fgv_7_-bzwAwIL_F0StlfEkT9IhvNPipk8QA-secF_BOJtbeCQ5p_2_E)](https://github.com/mtornabene05)
 
 ## Features
 
