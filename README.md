@@ -4,7 +4,7 @@
 
 What: Our motivation for this project was to provide a dashboard where a user could look up their favorite artist and see that artists' latest social media and upcoming events. Our efforts have allowed the user to type in their favorite artist's name and see results from youtube, spotify, twitter, and instagram, along with events shown through the ticketmaster API. We learned how to use APIs, Fetch in javascript, and use Materialize for the CSS. Our project should stand out as efficient in displaying the wanted information.
 
-<img src="./assets/images/screenshot.png" alt="screenshot1" width="400"/>
+![Music Dashboard](./assets/images/screenshot.png "Screenshot")
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ What: Our motivation for this project was to provide a dashboard where a user co
 
 ## Installation
 
-No installation required. Follow the link listed under Usage below.
+No installation required. Follow the link listed under Usage below or in the Description above.
 
 ## Usage
 
@@ -27,15 +27,15 @@ No installation required. Follow the link listed under Usage below.
 
 To use Music Dashboard, simply type in the name of the artists in the search bar, shown in the following screenshot: 
 
-<img src="./assets/images/screenshot2.png" alt="screenshot2" width="400"/>
+![Music Dashboard Search Bar](./assets/images/screenshot2.png "Screenshot2")
 
 By clicking the search button or hitting enter, the news section will be populated with five of the most salient articles about the artist. The dashboard will only display the headline and a short summary of the article, but the user can click the "source" link to be taken to the source page of the full article.
 
-<img src="./assets/images/screenshot3.png" alt="screenshot3" width="400"/>
+![Music Dashboard News](./assets/images/screenshot3.png "Screenshot3")
 
 Music dashboard will also populate Events section with three of the artist's upcoming events.
 
-<img src="./assets/images/screenshot4.png" alt="screenshot4" width="400"/>
+![Music Dashboard Events](./assets/images/screenshot4.png "Screenshot4")
 
 ## Credits
 
